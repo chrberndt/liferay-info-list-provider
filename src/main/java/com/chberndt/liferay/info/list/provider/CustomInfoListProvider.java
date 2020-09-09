@@ -137,6 +137,8 @@ public class CustomInfoListProvider implements InfoListProvider<AssetEntry> {
 
 		Company company = infoListProviderContext.getCompany();
 
+		// TODO: Filter by JournalArticle
+
 		long[] availableClassNameIds =
 			AssetRendererFactoryRegistryUtil.getClassNameIds(
 				company.getCompanyId(), true);
