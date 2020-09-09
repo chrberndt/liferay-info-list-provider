@@ -173,6 +173,8 @@ public class CustomInfoListProvider implements InfoListProvider<AssetEntry> {
 
 		assetEntryQuery.setEnablePermissions(true);
 
+		// TODO: Set relevant groupIds (AssetLibraries, Sites, Global, etc.)
+
 		Optional<Group> groupOptional =
 			infoListProviderContext.getGroupOptional();
 
