@@ -1,0 +1,10 @@
+dependencies {
+	// Because of com.liferay.portal.kernel.language.LanguageUtil
+
+	compileOnly group: "com.liferay", name: "com.liferay.asset.api"
+	compileOnly group: "com.liferay", name: "com.liferay.info.api"
+	compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel"
+	compileOnly group: "org.apache.felix", name: "org.apache.felix.http.servlet-api", version: "1.1.2"
+	compileOnly group: "org.osgi", name: "org.osgi.core"
+	compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations"
+}
