@@ -2,7 +2,6 @@ package com.chberndt.liferay.info.item.provider;
 
 import com.liferay.info.exception.NoSuchInfoItemException;
 import com.liferay.info.item.ClassPKInfoItemIdentifier;
-import com.liferay.info.item.GroupKeyInfoItemIdentifier;
 import com.liferay.info.item.GroupUrlTitleInfoItemIdentifier;
 import com.liferay.info.item.InfoItemIdentifier;
 import com.liferay.info.item.provider.InfoItemObjectProvider;
@@ -44,22 +43,23 @@ public class LayoutSEOEntryInfoItemObjectProvider
 		else if (infoItemIdentifier instanceof
 					GroupUrlTitleInfoItemIdentifier) {
 
-			ClassPKInfoItemIdentifier classPKInfoItemIdentifier = 
+			ClassPKInfoItemIdentifier classPKInfoItemIdentifier =
 				(ClassPKInfoItemIdentifier)infoItemIdentifier;
-//			GroupKeyInfoItemIdentifier groupKeyInfoItemIdentifier = 
-//				(GroupKeyInfoItemIdentifier)infoItemIdentifier;
-//			GroupUrlTitleInfoItemIdentifier groupUrlTitleInfoItemIdentifier =
-//				(GroupUrlTitleInfoItemIdentifier)infoItemIdentifier;
+			//			GroupKeyInfoItemIdentifier groupKeyInfoItemIdentifier =
+			//				(GroupKeyInfoItemIdentifier)infoItemIdentifier;
+			//			GroupUrlTitleInfoItemIdentifier groupUrlTitleInfoItemIdentifier =
+			//				(GroupUrlTitleInfoItemIdentifier)infoItemIdentifier;
 
 			try {
-				
+
 				// TODO
+
 				layoutSEOEntry = _layoutSEOEntryLocalService.getLayoutSEOEntry(
 					classPKInfoItemIdentifier.getClassPK());
-				
-//				layoutSEOEntry = _layoutSEOEntryLocalService.getLayoutSEOEntry(
-//					groupUrlTitleInfoItemIdentifier.getGroupId(),
-//					groupUrlTitleInfoItemIdentifier.getUrlTitle());
+
+				//				layoutSEOEntry = _layoutSEOEntryLocalService.getLayoutSEOEntry(
+				//					groupUrlTitleInfoItemIdentifier.getGroupId(),
+				//					groupUrlTitleInfoItemIdentifier.getUrlTitle());
 			}
 			catch (PortalException portalException) {
 				if (_log.isWarnEnabled()) {

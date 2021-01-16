@@ -24,8 +24,9 @@ public class LayoutInfoItemObjectProvider
 	@Override
 	public Layout getInfoItem(InfoItemIdentifier infoItemIdentifier)
 		throws NoSuchInfoItemException {
-		
-		System.out.println("LayoutInfoItemObjectProvider.getInfoItem()");
+
+		System.out.println(
+			"LayoutInfoItemObjectProvider.getInfoItem(InfoItemIdentifier infoItemIdentifier)");
 
 		if (!(infoItemIdentifier instanceof ClassPKInfoItemIdentifier) &&
 			!(infoItemIdentifier instanceof GroupUrlTitleInfoItemIdentifier)) {
@@ -45,15 +46,17 @@ public class LayoutInfoItemObjectProvider
 		else if (infoItemIdentifier instanceof
 					GroupUrlTitleInfoItemIdentifier) {
 
-				GroupUrlTitleInfoItemIdentifier groupUrlTitleInfoItemIdentifier =
-					(GroupUrlTitleInfoItemIdentifier)infoItemIdentifier;
+			GroupUrlTitleInfoItemIdentifier groupUrlTitleInfoItemIdentifier =
+				(GroupUrlTitleInfoItemIdentifier)infoItemIdentifier;
 
 			try {
-				
+
 				// TODO: obtain private / publicLayout info from context
+
 				boolean privateLayout = false;
-				layout = _layoutLocalService.getLayoutByFriendlyURL(groupUrlTitleInfoItemIdentifier.getGroupId(), privateLayout,
-						groupUrlTitleInfoItemIdentifier.getUrlTitle());
+				layout = _layoutLocalService.getLayoutByFriendlyURL(
+					groupUrlTitleInfoItemIdentifier.getGroupId(), privateLayout,
+					groupUrlTitleInfoItemIdentifier.getUrlTitle());
 			}
 			catch (PortalException portalException) {
 				if (_log.isWarnEnabled()) {
@@ -70,10 +73,9 @@ public class LayoutInfoItemObjectProvider
 	}
 
 	@Override
-	public Layout getInfoItem(long classPK)
-		throws NoSuchInfoItemException {
-		
-		System.out.println("LayoutInfoItemObjectProvider.getInfoItem()");
+	public Layout getInfoItem(long classPK) throws NoSuchInfoItemException {
+		System.out.println(
+			"LayoutInfoItemObjectProvider.getInfoItem(long classPK)");
 
 		ClassPKInfoItemIdentifier classPKInfoItemIdentifier =
 			new ClassPKInfoItemIdentifier(classPK);

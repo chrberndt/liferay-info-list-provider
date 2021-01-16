@@ -15,7 +15,7 @@ public interface LayoutSEOEntryInfoItemFields {
 			"description"
 		).labelInfoLocalizedValue(
 			InfoLocalizedValue.localize(
-					LayoutSEOEntryInfoItemFields.class, "description")
+				LayoutSEOEntryInfoItemFields.class, "description")
 		).build();
 	public static final InfoField<ImageInfoFieldType> imageInfoField =
 		InfoField.builder(
@@ -25,7 +25,7 @@ public interface LayoutSEOEntryInfoItemFields {
 			"image"
 		).labelInfoLocalizedValue(
 			InfoLocalizedValue.localize(
-					LayoutSEOEntryInfoItemFields.class, "image")
+				LayoutSEOEntryInfoItemFields.class, "image")
 		).build();
 	public static final InfoField<TextInfoFieldType> titleInfoField =
 		InfoField.builder(
@@ -35,6 +35,7 @@ public interface LayoutSEOEntryInfoItemFields {
 			"title"
 		).labelInfoLocalizedValue(
 			InfoLocalizedValue.localize(
-					LayoutSEOEntryInfoItemFields.class, "title")
+				LayoutSEOEntryInfoItemFields.class, "title")
 		).build();
+
 }

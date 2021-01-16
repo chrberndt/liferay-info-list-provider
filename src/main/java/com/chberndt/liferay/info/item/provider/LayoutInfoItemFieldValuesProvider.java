@@ -1,6 +1,7 @@
 package com.chberndt.liferay.info.item.provider;
 
 import com.chberndt.liferay.info.field.LayoutInfoItemFields;
+
 import com.liferay.info.field.InfoFieldValue;
 import com.liferay.info.item.InfoItemFieldValues;
 import com.liferay.info.item.InfoItemReference;
@@ -21,22 +22,16 @@ public class LayoutInfoItemFieldValuesProvider
 	implements InfoItemFieldValuesProvider<Layout> {
 
 	@Override
-	public InfoItemFieldValues getInfoItemFieldValues(
-		Layout layout) {
-
+	public InfoItemFieldValues getInfoItemFieldValues(Layout layout) {
 		return InfoItemFieldValues.builder(
 		).infoFieldValues(
 			_getInfoFieldValues(layout)
 		).infoItemReference(
-			new InfoItemReference(
-				Layout.class.getName(),
-				layout.getLayoutId())
+			new InfoItemReference(Layout.class.getName(), layout.getLayoutId())
 		).build();
 	}
 
-	private List<InfoFieldValue<Object>> _getInfoFieldValues(
-		Layout layout) {
-
+	private List<InfoFieldValue<Object>> _getInfoFieldValues(Layout layout) {
 		List<InfoFieldValue<Object>> infoFieldValues = new ArrayList<>();
 
 		infoFieldValues.add(
@@ -53,8 +48,7 @@ public class LayoutInfoItemFieldValuesProvider
 		if (themeDisplay != null) {
 			infoFieldValues.add(
 				new InfoFieldValue<>(
-					LayoutInfoItemFields.imageInfoField,
-					null));
+					LayoutInfoItemFields.imageInfoField, null));
 		}
 
 		return infoFieldValues;

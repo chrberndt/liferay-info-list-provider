@@ -1,6 +1,7 @@
 package com.chberndt.liferay.info.item.provider;
 
 import com.chberndt.liferay.info.field.LayoutSEOEntryInfoItemFields;
+
 import com.liferay.info.field.InfoFieldValue;
 import com.liferay.info.item.InfoItemFieldValues;
 import com.liferay.info.item.InfoItemReference;
