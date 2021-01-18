@@ -6,9 +6,7 @@ import com.liferay.info.field.type.TextInfoFieldType;
 import com.liferay.info.localized.InfoLocalizedValue;
 
 /**
- *
  * @author Christian Berndt
- *
  */
 public interface TeaserInfoItemFields {
 

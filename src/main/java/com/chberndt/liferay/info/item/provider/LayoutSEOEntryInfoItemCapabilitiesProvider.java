@@ -11,6 +11,9 @@ import java.util.List;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
+/**
+ * @author Christian Berndt
+ */
 @Component(service = InfoItemCapabilitiesProvider.class)
 public class LayoutSEOEntryInfoItemCapabilitiesProvider
 	implements InfoItemCapabilitiesProvider<LayoutSEOEntry> {

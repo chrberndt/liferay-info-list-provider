@@ -9,6 +9,9 @@ import com.liferay.layout.seo.model.LayoutSEOEntry;
 import org.osgi.framework.Constants;
 import org.osgi.service.component.annotations.Component;
 
+/**
+ * @author Christian Berndt
+ */
 @Component(
 	immediate = true, property = Constants.SERVICE_RANKING + ":Integer=10",
 	service = InfoItemDetailsProvider.class

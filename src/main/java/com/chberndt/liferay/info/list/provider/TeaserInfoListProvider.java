@@ -2,6 +2,7 @@ package com.chberndt.liferay.info.list.provider;
 
 import com.chberndt.liferay.info.item.Teaser;
 import com.chberndt.liferay.info.item.TeaserDTO;
+
 import com.liferay.info.list.provider.InfoListProvider;
 import com.liferay.info.list.provider.InfoListProviderContext;
 import com.liferay.info.pagination.Pagination;
@@ -40,13 +41,13 @@ public class TeaserInfoListProvider implements InfoListProvider<Teaser> {
 	public List<Teaser> getInfoList(
 		InfoListProviderContext infoListProviderContext, Pagination pagination,
 		Sort sort) {
-		
+
 		System.out.println("TeaserInfoListProvider.getInfoList()");
 
 		// Obtain a list of layouts
 
 		List<Layout> layouts = _layoutLocalService.dynamicQuery(
-			_getDynamicQuery(infoListProviderContext, PRIVATE_LAYOUT),
+			_getDynamicQuery(infoListProviderContext, _PRIVATE_LAYOUT),
 			QueryUtil.ALL_POS, QueryUtil.ALL_POS);
 
 		System.out.println("layouts.size() = " + layouts.size());
@@ -54,17 +55,18 @@ public class TeaserInfoListProvider implements InfoListProvider<Teaser> {
 		// TODO: Add paging
 		// TODO: Filter by categories
 		// TODO: Filter by parentlayoutId
-		
-		List<Teaser> teasers = new ArrayList<Teaser>(); 
-		
+
+		List<Teaser> teasers = new ArrayList<>();
+
 		for (Layout layout : layouts) {
-			
-			Teaser teaser = new TeaserDTO(); 
-			teaser.setClassName(Layout.class.getName());
-			teaser.setClassPK(layout.getLayoutId());
+			Teaser teaser = new TeaserDTO();
+
+			//			teaser.setClassName(Layout.class.getName());
+			//			teaser.setClassPK(layout.getLayoutId());
 			teaser.setTitle(layout.getTitle(LocaleUtil.getDefault()));
-			teaser.setDescription(layout.getDescription(LocaleUtil.getDefault()));
-			
+			teaser.setDescription(
+				layout.getDescription(LocaleUtil.getDefault()));
+
 			teasers.add(teaser);
 		}
 
@@ -104,19 +106,19 @@ public class TeaserInfoListProvider implements InfoListProvider<Teaser> {
 		// Get all private / public Content Pages of the current group
 		// Filter out "editing" layouts marked as "system"
 
-		return _layoutLocalService.dynamicQuery(
-		).add(
-			RestrictionsFactoryUtil.eq("groupId", group.getGroupId())
-		).add(
-			RestrictionsFactoryUtil.eq("type", "content")
-		).add(
-			RestrictionsFactoryUtil.eq("privateLayout", privateLayout)
-		).add(
-			RestrictionsFactoryUtil.eq("system", PRIVATE_LAYOUT)
-		);
+		DynamicQuery dynamicQuery = _layoutLocalService.dynamicQuery();
+
+		dynamicQuery.add(
+			RestrictionsFactoryUtil.eq("groupId", group.getGroupId()));
+		dynamicQuery.add(RestrictionsFactoryUtil.eq("type", "content"));
+		dynamicQuery.add(
+			RestrictionsFactoryUtil.eq("privateLayout", privateLayout));
+		dynamicQuery.add(RestrictionsFactoryUtil.eq("system", _PRIVATE_LAYOUT));
+
+		return dynamicQuery;
 	}
 
-	private static boolean PRIVATE_LAYOUT = false;
+	private static final boolean _PRIVATE_LAYOUT = false;
 
 	@Reference
 	private LayoutLocalService _layoutLocalService;

@@ -2,6 +2,7 @@ package com.chberndt.liferay.info.item.provider;
 
 import com.chberndt.liferay.info.item.Teaser;
 import com.chberndt.liferay.info.item.TeaserDTO;
+
 import com.liferay.info.exception.NoSuchInfoItemException;
 import com.liferay.info.item.ClassPKInfoItemIdentifier;
 import com.liferay.info.item.GroupUrlTitleInfoItemIdentifier;
@@ -17,6 +18,9 @@ import com.liferay.portal.kernel.util.LocaleUtil;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
+/**
+ * @author Christian Berndt
+ */
 @Component(
 	immediate = true, property = "service.ranking:Integer=100",
 	service = InfoItemObjectProvider.class
@@ -71,9 +75,9 @@ public class TeaserInfoItemObjectProvider
 		if (layout == null) {
 			throw new NoSuchInfoItemException("Invalid infoItemIdentifier");
 		}
-		
+
 		Teaser teaser = new TeaserDTO();
-		
+
 		teaser.setClassName(Layout.class.getName());
 		teaser.setClassPK(layout.getLayoutId());
 		teaser.setTitle(layout.getTitle(LocaleUtil.getDefault()));

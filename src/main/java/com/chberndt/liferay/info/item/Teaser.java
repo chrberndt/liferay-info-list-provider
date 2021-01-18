@@ -1,5 +1,8 @@
 package com.chberndt.liferay.info.item;
 
+/**
+ * @author Christian Berndt
+ */
 public interface Teaser {
 
 	public String getClassName();

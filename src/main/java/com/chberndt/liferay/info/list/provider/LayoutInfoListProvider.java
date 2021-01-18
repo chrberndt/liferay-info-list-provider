@@ -37,12 +37,12 @@ public class LayoutInfoListProvider implements InfoListProvider<Layout> {
 		InfoListProviderContext infoListProviderContext, Pagination pagination,
 		Sort sort) {
 
-		System.out.println("TeaserInfoListProvider.getInfoList()");
+		System.out.println("LayoutInfoListProvider.getInfoList()");
 
 		// Obtain a list of layouts
 
 		List<Layout> layouts = _layoutLocalService.dynamicQuery(
-			_getDynamicQuery(infoListProviderContext, PRIVATE_LAYOUT),
+			_getDynamicQuery(infoListProviderContext, _PRIVATE_LAYOUT),
 			QueryUtil.ALL_POS, QueryUtil.ALL_POS);
 
 		System.out.println("layouts.size() = " + layouts.size());
@@ -95,11 +95,11 @@ public class LayoutInfoListProvider implements InfoListProvider<Layout> {
 		).add(
 			RestrictionsFactoryUtil.eq("privateLayout", privateLayout)
 		).add(
-			RestrictionsFactoryUtil.eq("system", PRIVATE_LAYOUT)
+			RestrictionsFactoryUtil.eq("system", _PRIVATE_LAYOUT)
 		);
 	}
 
-	private static boolean PRIVATE_LAYOUT = false;
+	private static boolean _PRIVATE_LAYOUT = false;
 
 	@Reference
 	private LayoutLocalService _layoutLocalService;

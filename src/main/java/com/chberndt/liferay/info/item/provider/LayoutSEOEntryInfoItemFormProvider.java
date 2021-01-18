@@ -8,6 +8,9 @@ import com.liferay.layout.seo.model.LayoutSEOEntry;
 
 import org.osgi.service.component.annotations.Component;
 
+/**
+ * @author Christian Berndt
+ */
 @Component(service = InfoItemFormProvider.class)
 public class LayoutSEOEntryInfoItemFormProvider
 	implements InfoItemFormProvider<LayoutSEOEntry> {

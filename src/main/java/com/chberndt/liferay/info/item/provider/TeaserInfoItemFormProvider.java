@@ -8,6 +8,9 @@ import com.liferay.info.item.provider.InfoItemFormProvider;
 
 import org.osgi.service.component.annotations.Component;
 
+/**
+ * @author Christian Berndt
+ */
 @Component(service = InfoItemFormProvider.class)
 public class TeaserInfoItemFormProvider
 	implements InfoItemFormProvider<Teaser> {

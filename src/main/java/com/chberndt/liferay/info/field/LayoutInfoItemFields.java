@@ -5,6 +5,9 @@ import com.liferay.info.field.type.ImageInfoFieldType;
 import com.liferay.info.field.type.TextInfoFieldType;
 import com.liferay.info.localized.InfoLocalizedValue;
 
+/**
+ * @author Christian Berndt
+ */
 public interface LayoutInfoItemFields {
 
 	public static final InfoField<TextInfoFieldType> descriptionInfoField =

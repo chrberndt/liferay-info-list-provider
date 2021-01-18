@@ -14,6 +14,9 @@ import com.liferay.portal.kernel.service.LayoutLocalService;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
+/**
+ * @author Christian Berndt
+ */
 @Component(
 	immediate = true, property = "service.ranking:Integer=100",
 	service = InfoItemObjectProvider.class

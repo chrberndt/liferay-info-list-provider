@@ -1,56 +1,92 @@
 package com.chberndt.liferay.info.item;
 
+import com.liferay.expando.kernel.model.ExpandoBridge;
+import com.liferay.portal.kernel.model.ClassedModel;
+
+import java.io.Serializable;
+
 /**
- *
  * @author Christian Berndt
- *
  */
-public class TeaserDTO implements Teaser {
+public class TeaserDTO implements ClassedModel, Teaser {
 
 	public String getClassName() {
-		return className;
+		return _className;
 	}
 
 	public long getClassPK() {
-		return classPK;
+		return _classPK;
 	}
 
 	public String getDescription() {
-		return description;
+		return _description;
+	}
+
+	@Override
+	public ExpandoBridge getExpandoBridge() {
+
+		// TODO Auto-generated method stub
+
+		return null;
 	}
 
 	public String getImageURL() {
-		return imageURL;
+		return _imageURL;
+	}
+
+	@Override
+	public Class<?> getModelClass() {
+		return Teaser.class;
+	}
+
+	@Override
+	public String getModelClassName() {
+		return Teaser.class.getName();
+	}
+
+	@Override
+	public Serializable getPrimaryKeyObj() {
+
+		// TODO Auto-generated method stub
+
+		return null;
 	}
 
 	public String getTitle() {
-		return title;
+		return _title;
 	}
 
 	public void setClassName(String className) {
-		this.className = className;
+		_className = className;
 	}
 
 	public void setClassPK(long classPK) {
-		this.classPK = classPK;
+		_classPK = classPK;
 	}
 
 	public void setDescription(String description) {
-		this.description = description;
+		_description = description;
 	}
 
 	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
+		_imageURL = imageURL;
+	}
+
+	@Override
+	public void setPrimaryKeyObj(Serializable primaryKeyObj) {
+
+		// TODO Auto-generated method stub
+
 	}
 
 	public void setTitle(String title) {
-		this.title = title;
+		_title = title;
 	}
 
-	private String className;
-	private long classPK;
-	private String description;
-	private String imageURL;
-	private String title;
+	private String _className;
+	private long _classPK;
+	private String _description;
+	private String _imageURL;
+	private String _title;
 
 }

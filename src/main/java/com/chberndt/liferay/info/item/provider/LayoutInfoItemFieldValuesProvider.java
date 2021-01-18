@@ -17,17 +17,23 @@ import java.util.List;
 
 import org.osgi.service.component.annotations.Component;
 
+/**
+ * @author Christian Berndt
+ */
 @Component(service = InfoItemFieldValuesProvider.class)
 public class LayoutInfoItemFieldValuesProvider
 	implements InfoItemFieldValuesProvider<Layout> {
 
 	@Override
 	public InfoItemFieldValues getInfoItemFieldValues(Layout layout) {
-		
-		System.out.println("LayoutInfoItemFieldValuesProvider.getInfoItemFieldValues()"); 
+		System.out.println(
+			"LayoutInfoItemFieldValuesProvider.getInfoItemFieldValues()");
 		System.out.println("layout.getLayoutId() = " + layout.getLayoutId());
-		System.out.println("Layout.class.getName() = " + Layout.class.getName());
-		
+		System.out.println(
+			"Layout.class.getName() = " + Layout.class.getName());
+
+		//		System.out.println("layout = " + layout);
+
 		return InfoItemFieldValues.builder(
 		).infoFieldValues(
 			_getInfoFieldValues(layout)

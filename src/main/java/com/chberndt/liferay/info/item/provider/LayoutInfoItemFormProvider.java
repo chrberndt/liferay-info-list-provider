@@ -8,6 +8,9 @@ import com.liferay.portal.kernel.model.Layout;
 
 import org.osgi.service.component.annotations.Component;
 
+/**
+ * @author Christian Berndt
+ */
 @Component(service = InfoItemFormProvider.class)
 public class LayoutInfoItemFormProvider
 	implements InfoItemFormProvider<Layout> {

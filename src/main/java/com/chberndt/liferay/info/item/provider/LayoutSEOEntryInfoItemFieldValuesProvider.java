@@ -16,6 +16,9 @@ import java.util.List;
 
 import org.osgi.service.component.annotations.Component;
 
+/**
+ * @author Christian Berndt
+ */
 @Component(service = InfoItemFieldValuesProvider.class)
 public class LayoutSEOEntryInfoItemFieldValuesProvider
 	implements InfoItemFieldValuesProvider<LayoutSEOEntry> {
