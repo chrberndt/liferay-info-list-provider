@@ -37,6 +37,8 @@ public class LayoutInfoListProvider implements InfoListProvider<Layout> {
 		InfoListProviderContext infoListProviderContext, Pagination pagination,
 		Sort sort) {
 
+		System.out.println("TeaserInfoListProvider.getInfoList()");
+
 		// Obtain a list of layouts
 
 		List<Layout> layouts = _layoutLocalService.dynamicQuery(

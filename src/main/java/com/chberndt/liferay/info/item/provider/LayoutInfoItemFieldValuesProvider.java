@@ -23,6 +23,11 @@ public class LayoutInfoItemFieldValuesProvider
 
 	@Override
 	public InfoItemFieldValues getInfoItemFieldValues(Layout layout) {
+		
+		System.out.println("LayoutInfoItemFieldValuesProvider.getInfoItemFieldValues()"); 
+		System.out.println("layout.getLayoutId() = " + layout.getLayoutId());
+		System.out.println("Layout.class.getName() = " + Layout.class.getName());
+		
 		return InfoItemFieldValues.builder(
 		).infoFieldValues(
 			_getInfoFieldValues(layout)
